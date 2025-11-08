@@ -1,4 +1,4 @@
-# DEADFACE CTF: The Professor's Files (November 8, 2025)
+# Buckeye CTF: The Professor's Files (November 8, 2025)
 
 **Category:** Beginner/Forensics  
 **Points:** 50
