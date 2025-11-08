@@ -1,7 +1,7 @@
 # Buckeye CTF: The Professor's Files (November 8, 2025)
 
 **Category:** Beginner/Forensics  
-**Points:** 50
+**Points:** 50      
 **Files Provided:** OSU_Ethics_Report.docx 
 
 ---
