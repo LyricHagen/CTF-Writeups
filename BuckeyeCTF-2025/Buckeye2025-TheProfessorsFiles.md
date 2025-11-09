@@ -18,8 +18,9 @@ looks strange too, and there’s a rumor that the professor hides sensitive data
 
 ## Step 1: Converting the File & Extracting the Zip
 
-I started with 3 commands: **cd, cp, and unzip,**, which respectively navigated to my downloads folder, copied the provided docx file
-into zip format, and unzipped the file into a folder called "extracted."
+The first thing I did was try to open the .docx file, which didn't work due to an error. I opened it in Google Drive and read the contents, but got no useful info. I then tried to change the file extension from .docx to .zip and open the zip, but that also resulted in an error when trying to extract it. 
+
+To get it to work, I used 3 commands: **cd, cp, and unzip,**, which respectively navigated to my downloads folder, copied the provided docx file into zip format, and unzipped the file into a folder called "extracted."
 
 ```
 cd /Users/myname/Downloads
