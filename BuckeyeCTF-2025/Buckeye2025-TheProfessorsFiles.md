@@ -30,7 +30,7 @@ unzip OSU_Ethics_Report.zip -d extracted
 
 ---
 
-## Step 2: Searching For the Flag
+## Step 2: Searching for the Flag
 
 I now had a folder with all of the files stored within the provided docx file. It had 3 folders: _rels, docProps, and word, and 1 file called \[Content_Types\].xml.
 
