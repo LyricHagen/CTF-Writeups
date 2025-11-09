@@ -54,4 +54,4 @@ As you can see, the flag is right there among the code.
 
 Docx files can be turned into zip files and extracted.
 
-In simpler challenges, flags can simply be hidden among the code.
+In simpler challenges, flags can simply be hidden in unencrypted plaintext among the code.
