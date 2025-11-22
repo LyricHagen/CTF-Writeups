@@ -7,7 +7,7 @@
 
 "You must be very wise to pass this one"
 
-## Step 1: Initial Reconnaissance
+## Step 1: Reconnaissance
 
 The first thing I did was check what files we were working with. The `sha256sum` file just contained the hash of the challenge binary for verification. The main file was `challenge`, a Linux ELF 64-bit executable.
 
@@ -19,7 +19,7 @@ I ran `strings challenge` to see what text was inside:
 strings challenge > output.txt
 ```
 
-Key findings:
+Some stuff I found:
 - `"Enter thy wisdom: "` - asks for input
 - `"You are very wise!"` - success message  
 - `"Unwise..."` - failure message
@@ -28,9 +28,9 @@ Key findings:
 
 This told me the program checks if your input matches some expected value.
 
-## Step 2: Reverse Engineering with Ghidra
+## Step 2: Rev w/ Ghidra
 
-I opened the binary in Ghidra (a free decompiler). After letting it auto-analyze, I looked at the `main` function in the decompiler window:
+I opened the binary in Ghidra. After letting it auto-analyze, I looked at the `main` function in the decompiler window:
 
 ```c
 undefined8 main(void)
@@ -53,10 +53,8 @@ undefined8 main(void)
 }
 ```
 
-From this I learned:
-- Input must be exactly `0x2e` (46 decimal) characters long
-- Input gets passed to `check_flag()` for validation
-- If valid, prints success message
+This basically says that input must be exactly `0x2e` (46 decimal) characters long, input gets 
+passed to `check_flag()` for validation, and if it's valid, it prints the success message.
 
 ## Step 3: Understanding the Encryption Algorithm
 
@@ -84,7 +82,7 @@ This function encrypts your input using this algorithm:
 encrypted[i] = ((input[i] ^ KEY[i]) - i) + MAGIC
 ```
 
-Then it compares the encrypted result to the `FLAG` array using `memcmp`. If they match, you win.
+Then it compares the encrypted result to the `FLAG` array using `memcmp`. If they match, you get the flag.
 
 ## Step 4: Extracting the Data
 
@@ -160,6 +158,6 @@ Running this gave me the flag.
 ## Takeaways
 
 - Strings in binaries can reveal important clues about program behavior.
-- XOR encryption is reversible - you can decrypt by XORing again with the same key.
+- XOR encryption is reversible; you can decrypt by XORing again with the same key.
 - Static analysis with tools like Ghidra lets you solve challenges without running the binary.
-- Understanding the math behind an encryption algorithm allows you to reverse it algebraically rather than brute-forcing.
+- Understanding the math behind an encryption algorithm lets you reverse it algebraically rather than brute-forcing.
