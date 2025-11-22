@@ -150,10 +150,9 @@ for i in range(46):
 
 flag = ''.join(chr(c) for c in result)
 print("Flag:", flag)
-print("Length:", len(flag))
 ```
 
-Running this gave me the flag.
+Running this gave me the flag: "gctf{Ke3P_g0iNg_Y0u_goT_tH1s_00055ba509ea6138}".
 
 ## Takeaways
 
