@@ -1,6 +1,7 @@
 # Intro (rev) (November 22, 2025)
 
 **Category:** rev  
+**Points:** 50  
 **Files Provided:** challenge (ELF executable), sha256sum
 
 ## Challenge Description
