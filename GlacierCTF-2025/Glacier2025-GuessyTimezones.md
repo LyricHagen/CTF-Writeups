@@ -1,6 +1,6 @@
 # Guessy Timezones (November 22, 2025)
 
-**Category:** rev
+**Category:** rev  
 **Points:** 50  
 **Files Provided:** challenge (ELF executable), deploy.bat, deploy.sh, flag.txt, sha256sum
 
