@@ -1,6 +1,6 @@
 # Intro (rev) (November 22, 2025)
 
-**Category:** rev
+**Category:** rev  
 **Files Provided:** challenge (ELF executable), sha256sum
 
 ## Challenge Description
