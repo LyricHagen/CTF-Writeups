@@ -53,7 +53,7 @@ So, the clear solution was to visualize this file in some way, and surely it wou
 
 I first tried extracting all the coordinates and plotting them with a simple script. That just gave me static.
 
-Although the 7-bit signal width ([6:0]) means coordinates should be capped at 127, the file contains values up to 640, implying that it "wraps around." Applying module 128 to all of them still produced noise.
+Although the 7-bit signal width ([6:0]) means coordinates should be capped at 127, the file contains values up to 640, implying that it "wraps around." Applying modulo 128 to all of them still produced noise.
 The key insight was that some coordinates had the 7'd size prefix on both x and y, and some had only one or neither. Perhaps, only coordinates where both values had the 7'd prefix were real pixels.
 
 I wrote a script to split the coordinates into two groups based on whether both had the 7'd prefix.
