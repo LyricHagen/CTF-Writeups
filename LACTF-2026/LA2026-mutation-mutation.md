@@ -16,7 +16,7 @@ By screenshotting the page, I could see the flag - something like "lactf{constan
 
 ## Step 2: The Solution
 
-I felt that the solution would involve a console script that took all the comments from the Elements tab ans pasted them into an easily-copypastable list, so I experimented with different JS scripts that took in the comments and outputted them in the console. Most of these scripts resulted in unfamiliar errors, but the following script is the one that ended up working. It outputted all the flags in an easily copiable way, and from there, I could just choose the one that was clearly not one of the fake ones.
+I felt that the solution would involve a console script that took all the comments from the Elements tab and pasted them into an easily-copypastable list, so I experimented with different JS scripts that took in the comments and outputted them in the console. Most of these scripts resulted in unfamiliar errors, but the following script is the one that ended up working. It outputted all the flags in an easily copiable way, and from there, I could just choose the one that was clearly not one of the fake ones.
 
 ```
 setTimeout(() => {
