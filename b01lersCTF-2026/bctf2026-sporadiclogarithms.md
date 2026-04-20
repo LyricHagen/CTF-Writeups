@@ -1,9 +1,9 @@
 # Sporadic Logarithms (April 18, 2026)
 
-**Category:** crypto
-**Points:** 224
-**Files Provided:** chall.py
-**Connection:** `ncat --ssl sporadiclogarithms.opus4-7.b01le.rs 8443`
+**Category:** crypto  
+**Points:** 224  
+**Files Provided:** chall.py  
+**Connection:** `ncat --ssl sporadiclogarithms.opus4-7.b01le.rs 8443`  
 
 ## Challenge Description
 
