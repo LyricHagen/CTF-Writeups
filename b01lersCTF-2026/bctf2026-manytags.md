@@ -1,9 +1,9 @@
 # Many Tags (April 18, 2026)
 
-**Category:** crypto
-**Points:** 214
-**Files Provided:** many_tags.py
-**Connection:** `ncat --ssl manytags.opus4-7.b01le.rs 8443`
+**Category:** crypto  
+**Points:** 214  
+**Files Provided:** many_tags.py  
+**Connection:** `ncat --ssl manytags.opus4-7.b01le.rs 8443`  
 
 ## Challenge Description
 
