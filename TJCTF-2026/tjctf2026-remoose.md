@@ -16,7 +16,7 @@
 00000000: 7f45 4c4b 0201 0120 2020 2020 2020 2020  .ELK...
 ```
 
-- Byte 3 is `0x4B` ('K') instead of `0x46` ('F'): the magic is `.ELK` not `.ELF`. ELF -> ELK (moose-ish). That's the "remoose" joke.
+- Byte 3 is `0x4B` ('K') instead of `0x46` ('F'): the magic is `.ELK` not `.ELF`. ELF -> ELK (like... an elk). That's why the challenge is called "remoose", I'm guessing.
 - Every NUL byte is replaced with `0x20` (space). The file contains 0 NULs and 14106 spaces.
 
 ## Step 2: Repairing
@@ -30,11 +30,11 @@ fixed[3] = 0x46
 open('chall_v2','wb').write(fixed)
 ```
 
-`file chall_v2` now reports a proper ELF64 PIE executable. I'm on macOS so I can't run it; the system LLVM objdump choked on the broken string table (some original spaces inside `.strtab` got nulled too), but Homebrew's `x86_64-elf-objdump` was forgiving enough.
+`file chall_v2` now reports a proper ELF64 PIE executable. I'm on macOS so I can't run it; the system LLVM objdump failed on the broken string table (some original spaces inside `.strtab` got nulled too), but Homebrew's `x86_64-elf-objdump` worked.
 
 ## Step 3: Reading the Chain
 
-`main` does nothing but call `flag()`. Each `flagN` function emits a substring via hard-coded `putchar`/`printf` immediates, then tail-calls the next:
+`main` does nothing but call `flag()`. Each `flagN` function emits a substring via hardcoded `putchar`/`printf` immediates, then tail-calls the next:
 
 ```
 flag :  putchar('t','j','c','t') + printf("f{")   = "tjctf{"
