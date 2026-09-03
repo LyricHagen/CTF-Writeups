@@ -10,11 +10,11 @@
 
 ## Step 1: Exploring
 
-logo.png was 65 KB for a 150x150 flat-color image - way too large. `exiftool logo.png` flagged it:
+logo.png was 65 KB for a 150x150 flat-color image - way too large. exiftool logo.png flagged it:
 
-`Warning : [minor] Trailer data after PNG IEND chunk`
+Warning : [minor] Trailer data after PNG IEND chunk
 
-The IEND chunk lives at offset 14268; everything after (50741 bytes) is appended. The trailer starts with `PK\x03\x04` - a ZIP, containing 248 PNGs named 001.png through 248.png.
+The IEND chunk lives at offset 14268; everything after (50741 bytes) is appended. The trailer starts with PK\x03\x04 - a ZIP, containing 248 PNGs named 001.png through 248.png.
 
 ## Step 2: Inspecting the Tiny PNGs
 
@@ -31,14 +31,14 @@ But dumping the hex of the first few PNGs revealed that the IHDR's compression-m
 
 ## Step 3: Decoding
 
-Walk all 248 files, grab `data[26]`, concatenate, parse 8-bit MSB-first:
+Walk all 248 files, grab data[26], concatenate, parse 8-bit MSB-first:
 
 ```
 bits = "".join(str(open(f'extracted/{i:03d}.png','rb').read()[26]) for i in range(1,249))
 msg = "".join(chr(int(bits[i:i+8], 2)) for i in range(0, 248, 8))
 ```
 
-`tjctf{wow_you_actually_read_it}`
+tjctf{wow_you_actually_read_it}
 
 ## Takeaways
 - PNG ignores anything past IEND - exiftool will tell you when there's trailer data.
